@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "877805430523",
+    "firebase_url": "https://ornamental-flowers.firebaseio.com",
+    "project_id": "ornamental-flowers",
+    "storage_bucket": "ornamental-flowers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877805430523:android:40c17abc53db53a7",
+        "android_client_info": {
+          "package_name": "com.example.ornamentalflowers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877805430523-qq91t39t1415eoef53uvn93fgda1b9a2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ornamentalflowers",
+            "certificate_hash": "9cac831767f0f3184a4649791374e29981a0c309"
+          }
+        },
+        {
+          "client_id": "877805430523-h9f8t2r8kncsiee8b1gfbcot5sr3ha00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOlR9xbsRdbCtz-2-axYb3RylZSyhX8hY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877805430523-h9f8t2r8kncsiee8b1gfbcot5sr3ha00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

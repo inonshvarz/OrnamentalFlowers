@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/signOut"
+        android:icon="@drawable/sign_out"
+        android:title="Nearby"/>
+
+    <item
+        android:id="@+id/ftb_ShowSumInvoices"
+        android:icon="@drawable/location"
+        android:title="Chat"/>
+
+    <item
+        android:id="@+id/ftb_listInvoice"
+        android:icon="@drawable/list"
+        android:title="Profile"/>
+
+    <item
+        android:id="@+id/ftb_anInvoice"
+        android:icon="@drawable/calc"
+        android:title="Settings"/>
+
+</menu>

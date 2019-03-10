@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/invoiceImage"
+        android:layout_width="107dp"
+        android:layout_height="105dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/flower3"/>
+
+    <TextView
+        android:id="@+id/txtNumInvoice"
+        android:layout_width="135dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="36dp"
+        android:layout_toEndOf="@+id/invoiceImage"
+        android:text="@string/invoice_number"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/inputNumInvoice"
+        android:layout_width="155dp"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/txtNumInvoice"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="36dp" />
+
+    <TextView
+        android:id="@+id/txtSumInvoice"
+        android:layout_width="135dp"
+        android:layout_height="35dp"
+        android:layout_alignTop="@+id/invoiceImage"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="38dp"
+        android:layout_toEndOf="@+id/invoiceImage"
+        android:text="@string/sum_invoice"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/inputSumInvoice"
+        android:layout_width="155dp"
+        android:layout_height="35dp"
+        android:layout_alignTop="@+id/txtSumInvoice"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/txtNumInvoice"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/txtDateInvoice"
+        android:layout_width="135dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="-138dp"
+        android:layout_toStartOf="@+id/inputNumInvoice"
+        android:text="@string/DateInvoice"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/inputDateInvoice"
+        android:layout_width="155dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/inputSumInvoice"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="9dp"
+        android:inputType="datetime" />
+
+</RelativeLayout>

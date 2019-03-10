@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="700dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/iduser"
+        style="@android:style/Widget.EditText"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="@string/id_number"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/idUser"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:digits="0123456789"
+        android:inputType="number"
+        android:maxLength="9" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="@string/FirstLastName"
+        android:textSize="20sp"
+        style="@android:style/Widget.EditText"/>
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:inputType="textPersonName"
+        android:maxLength="20"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/phonenumber"
+        style="@android:style/Widget.EditText"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="@string/phone_number"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:digits="0123456789+"
+        android:inputType="phone"
+        android:maxLength="10" />
+
+    <TextView
+        android:id="@+id/storesite"
+        style="@android:style/Widget.EditText"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:labelFor="@+id/storeSite"
+        android:text="@string/store_site"/>
+
+    <EditText
+        android:id="@+id/storeSite"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:inputType="text"
+        android:maxLength="20" />
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">פרחי נוי</string>
+    <string name="login">התחבר</string>
+    <string name="EmailAddress">כתובת מייל</string>
+    <string name="textPassword">סיסמה</string>
+    <string name="btnLogin">התחבר</string>
+    <string name="btn_sign_in_short">הרשמה</string>
+    <string name="btn_forgot_password">שכחת סיסמה?</string>
+    <string name="auth_failed">ההתחברות נכשלה</string>
+    <string name="emailpassword_status_fmt">כתובת מייל: %1$s (verified: %2$b)</string>
+    <string name="firebase_status_fmt">מחובר כ: %s</string>
+    <string name="sign_in">כניסה</string>
+    <string name="create_account">יצירת חשבון</string>
+    <string name="sign_out">יציאה</string>
+    <string name="verify_email">וודא כתובת אימייל</string>
+    <string name="signed_out">יציאה הושלמה</string>
+    <string name="hint_email">מייל</string>
+    <string name="hint_password">סיסמה</string>
+    <string name="desc_firebase_lockup">Firebase logo and name</string>
+    <string name="emailpassword_title_text">מייל וסיסמה</string>
+    <string name="FirstLastName">שם פרטי ושם משפחה</string>
+    <string name="reset_password">שינוי סיסמה</string>
+    <string name="id_number">תעודת זהות</string>
+    <string name="store_site">ישוב החנות</string>
+    <string name="open_camera">פתח מצלמה</string>
+    <string name="drawer_open">פתח כפתורי ניווט</string>
+    <string name="drawer_close">סגור כפתורי ניווט</string>
+    <string name="enter_invoice_number">הזן מזהה חשבונית</string>
+    <string name="enter_sum_invoice">הזן סכום חשבונית</string>
+    <string name="DateInvoice">הזן תאריך חשבונית</string>
+    <string name="Hello">שלום</string>
+    <string name="image">צלם חשבונית</string>
+    <string name="save">שמור פרטים</string>
+    <string name="phone_number">טלפון נייד</string>
+
+</resources>

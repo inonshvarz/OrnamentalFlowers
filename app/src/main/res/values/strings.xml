@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Ornamental Flowers</string>
+    <string name="login">Login</string>
+    <string name="EmailAddress">Email Address</string>
+    <string name="textPassword">Password</string>
+    <string name="btnLogin">Login</string>
+    <string name="btn_sign_in_short">Register</string>
+    <string name="btn_forgot_password">Forgot your password?</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+    <string name="verify_email">Verify Email</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="desc_firebase_lockup">Firebase logo and name</string>
+    <string name="emailpassword_title_text">Email and Password</string>
+    <string name="FirstLastName">First And Last name</string>
+    <string name="create_account">Create Account</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="id_number">Id Number</string>
+    <string name="store_site">Store Site</string>
+    <string name="open_camera">Open Camera</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_invoice_number">Enter Invoice Number</string>
+    <string name="enter_sum_invoice">Enter Sum Invoice</string>
+    <string name="DateInvoice">Date Invoice</string>
+    <string name="Hello">Hello</string>
+    <string name="image">Image</string>
+    <string name="save">Save</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="invoice_number">invoicenumber</string>
+    <string name="sum_invoice">sum_invoice</string>
+</resources>
