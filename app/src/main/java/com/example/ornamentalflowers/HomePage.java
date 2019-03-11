@@ -33,13 +33,12 @@ public class HomePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        //setContentView(R.layout.activity_home_page);
 
-        if (FirebaseAuth.getInstance().getCurrentUser() == null)
-        {
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             goToAutoPage();
-        }
-        else {
+        } else {
+            setContentView(R.layout.activity_home_page);
             FoldingTabBar tabBar = (FoldingTabBar) findViewById(R.id.folding_tab_bar);
             getSupportFragmentManager().beginTransaction().replace(R.id.container, new userProfile()).commit();
 
@@ -95,6 +94,7 @@ public class HomePage extends AppCompatActivity {
     private void goToAutoPage() {
         Intent intent = new Intent(this, AutoActivity.class);
         startActivity(intent);
+        setContentView(R.layout.activity_home_page);
     }
 
 }

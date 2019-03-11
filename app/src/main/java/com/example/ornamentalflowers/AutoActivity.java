@@ -236,6 +236,7 @@ public class AutoActivity extends AppCompatActivity{
         userDetailsClass.setStoreSite(storeSite);
         userDetailsClass.setMailAddress(email);
         userDetailsClass.setIdUser(idUser);
+        userDetailsClass.setManager(false);
 
         userDetailsReferance = FirebaseDatabase.getInstance().getReference();
         userDetailsReferance.child("Users").child(uId).setValue(userDetailsClass);

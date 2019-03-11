@@ -11,6 +11,7 @@ public class UserDetailsClass {
     String storeSite;
     String idUser;
     String uId;
+    Boolean manager;
 
     public String getMailAddress() {
         return mailAddress;
@@ -55,4 +56,8 @@ public class UserDetailsClass {
     public void setuId(String uId) { this.uId = uId; }
 
     public String getuId() { return uId; }
+
+    public Boolean getManager() { return manager;}
+
+    public void setManager(Boolean manager) { this.manager = manager; }
 }
