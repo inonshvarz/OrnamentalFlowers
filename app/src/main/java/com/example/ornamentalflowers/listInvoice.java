@@ -32,6 +32,7 @@ public class listInvoice extends Fragment {
     private FirebaseAuth mAuth;
     View listInvoice;
     ListView listView;
+    private Boolean managerFlag;
 
     public listInvoice() {
         // Required empty public constructor
@@ -47,31 +48,26 @@ public class listInvoice extends Fragment {
 
         return listInvoice;
 
-/*        // Construct the data source
-        ArrayList<InvoiceClass> arrayOfInvoice = new ArrayList<InvoiceClass>();
-        // Create the adapter to convert the array to views
-        invoiceAdapterClass adapter = new invoiceAdapterClass(getActivity(), arrayOfInvoice);
-        // Attach the adapter to a ListView
-        ListView listView = (ListView) listInvoice.findViewById(R.id.list_item);
-        listView.setAdapter(adapter);
-
-        // Add item to adapter
-        InvoiceClass newInvoice = new InvoiceClass();
-        newInvoice.setInvoiceId("444444");
-        newInvoice.setInvoiceSuper("אלון מורה");
-        newInvoice.setInvoiceSum("350");
-        newInvoice.setInvoiceDate("25/03/2019");
-        adapter.add(newInvoice);*/
-
-        //ListView listFBInvoice = (ListView) listInvoice.findViewById(R.id.listFBInvoice);
-
-        //listFBInvoice.setAdapter(invoiceClasse);
-
     }
 
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("Users");
+        DatabaseReference uIdRef = usersRef.child(mAuth.getUid());
+        DatabaseReference managerRef = uIdRef.child("manager");
+
+        managerRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                managerFlag = (Boolean) dataSnapshot.getValue();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
 
         invoiceReferance = FirebaseDatabase.getInstance().getReference("Invoice");
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -93,7 +89,6 @@ public class listInvoice extends Fragment {
 
     private void showData(DataSnapshot dataSnapshot, View view) {
 
-        //mAuth = FirebaseAuth.getInstance();
         String uId = mAuth.getUid();
         String uIdKey;
         ArrayList<InvoiceClass> invoiceClassList = new ArrayList<InvoiceClass>();
@@ -102,8 +97,7 @@ public class listInvoice extends Fragment {
         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
             InvoiceClass invoiceClass = postSnapshot.getValue(InvoiceClass.class);
             uIdKey = invoiceClass.invoiceUid;
-            if (uIdKey.equals(uId))
-            {
+            if (uIdKey.equals(uId) || managerFlag == true) {
                 invoiceClassList.add(invoiceClass);
             }
 
