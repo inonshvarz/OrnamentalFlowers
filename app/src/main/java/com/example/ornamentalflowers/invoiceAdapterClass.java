@@ -1,5 +1,6 @@
 package com.example.ornamentalflowers;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,15 +13,21 @@ import java.util.ArrayList;
 
 class invoiceAdapterClass extends ArrayAdapter<InvoiceClass> {
 
-    //public invoiceAdapterClass(@androidx.annotation.NonNull Context context, int resource) {
-    invoiceAdapterClass(Context context, InvoiceClass[] invoices) {
-        super(context, R.layout.recycler_view_item, invoices);
+    //to reference the Activity
+    private final Activity context;
+    //to store the list of invoice class
+    private final ArrayList<InvoiceClass> invoiceClassList;
+
+    public invoiceAdapterClass(Activity context, ArrayList<InvoiceClass> invoiceClassList) {
+        super(context, R.layout.invoice_row, invoiceClassList);
+        this.context=context;
+        this.invoiceClassList = invoiceClassList;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        LayoutInflater invoiceflater = LayoutInflater.from(getContext());
+        LayoutInflater invoiceflater = context.getLayoutInflater();
         View invoiceView = invoiceflater.inflate(R.layout.invoice_row, parent, false);
 
         InvoiceClass invoiceClass = getItem(position);
@@ -28,7 +35,7 @@ class invoiceAdapterClass extends ArrayAdapter<InvoiceClass> {
         TextView inputNumInvoice  = (TextView) invoiceView.findViewById(R.id.inputNumInvoice);
         TextView inputSumInvoice  = (TextView) invoiceView.findViewById(R.id.inputSumInvoice);
         TextView inputDateInvoice = (TextView) invoiceView.findViewById(R.id.inputDateInvoice);
-        ImageView invoiceImage    = (ImageView)invoiceView.findViewById(R.id.invoiceImage);
+        ImageView invoiceImage    = (ImageView) invoiceView.findViewById(R.id.invoiceImage);
 
         inputNumInvoice.setText(invoiceClass.invoiceId);
         inputSumInvoice.setText(invoiceClass.invoiceSum);

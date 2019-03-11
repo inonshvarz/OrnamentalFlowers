@@ -38,4 +38,5 @@
     <string name="phone_number">Phone Number</string>
     <string name="invoice_number">invoicenumber</string>
     <string name="sum_invoice">sum_invoice</string>
+    <string name="ShowDateInvoice">Date Invoice</string>
 </resources>

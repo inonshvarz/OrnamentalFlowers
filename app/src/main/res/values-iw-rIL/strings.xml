@@ -33,5 +33,8 @@
     <string name="image">צלם חשבונית</string>
     <string name="save">שמור פרטים</string>
     <string name="phone_number">טלפון נייד</string>
+    <string name="invoice_number">מזהה חשבונית:</string>
+    <string name="sum_invoice">סכום חשבונית:</string>
+    <string name="ShowDateInvoice">תאריך חשבונית:</string>
 
 </resources>

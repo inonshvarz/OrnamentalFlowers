@@ -28,10 +28,10 @@ import java.util.Map;
 public class listInvoice extends Fragment {
 
     DatabaseReference invoiceReferance;
-    //InvoiceClass invoiceClass;
     FirebaseDatabase mFirebaseDatabase;
-    FirebaseAuth mAuth;
-    List<InvoiceClass> invoiceClass;
+    private FirebaseAuth mAuth;
+    View listInvoice;
+    ListView listView;
 
     public listInvoice() {
         // Required empty public constructor
@@ -42,7 +42,8 @@ public class listInvoice extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View listInvoice = inflater.inflate(R.layout.fragment_list_invoice, container, false);
+        listInvoice = inflater.inflate(R.layout.fragment_list_invoice, container, false);
+        mAuth = FirebaseAuth.getInstance();
 
         return listInvoice;
 
@@ -72,17 +73,14 @@ public class listInvoice extends Fragment {
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mAuth = FirebaseAuth.getInstance();
-        invoiceReferance = FirebaseDatabase.getInstance().getReference();
+        invoiceReferance = FirebaseDatabase.getInstance().getReference("Invoice");
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        invoiceClass = new ArrayList<InvoiceClass>();
+        //invoiceClass = new ArrayList<InvoiceClass>();
 
 
         invoiceReferance.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
                 showData(dataSnapshot, view);
             }
 
@@ -93,41 +91,26 @@ public class listInvoice extends Fragment {
 
     }
 
-
     private void showData(DataSnapshot dataSnapshot, View view) {
 
-        /*userName = view.findViewById(R.id.userName);
-        storeSite = view.findViewById(R.id.storeSite);*/
+        //mAuth = FirebaseAuth.getInstance();
+        String uId = mAuth.getUid();
+        String uIdKey;
+        ArrayList<InvoiceClass> invoiceClassList = new ArrayList<InvoiceClass>();
+        invoiceAdapterClass invoiceAdapter = new invoiceAdapterClass(getActivity(), invoiceClassList);
 
-        DatabaseReference invoiceRef = FirebaseDatabase.getInstance().getReference("Invoice");
-/*        DatabaseReference uIdRef = invoiceRef.child(mAuth.getUid());
-        DatabaseReference nameRef = uIdRef.child("userName");
-        DatabaseReference siteRef = uIdRef.child("storeSite");*/
-
-        invoiceRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                GenericTypeIndicator<Map<String, List<InvoiceClass>>> genericTypeIndicator = new GenericTypeIndicator<Map<String, List<InvoiceClass>>>() {};
-                Map<String, List<InvoiceClass>> hashMap = dataSnapshot.getValue(genericTypeIndicator);
-
-                for (Map.Entry<String,List<InvoiceClass>> entry : hashMap.entrySet()) {
-                    List<InvoiceClass> educations = entry.getValue();
-                    for (InvoiceClass education: educations){
-                        //Log.i(TAG, education.Degree);
-                    }
-                }
-
-
-
-/*                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    <invoiceClass> post = postSnapshot.getValue(<invoiceClass>.class);
-                }*/
+        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+            InvoiceClass invoiceClass = postSnapshot.getValue(InvoiceClass.class);
+            uIdKey = invoiceClass.invoiceUid;
+            if (uIdKey.equals(uId))
+            {
+                invoiceClassList.add(invoiceClass);
             }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
+        }
+
+        listView = (ListView) listInvoice.findViewById(R.id.list_item);
+        listView.setAdapter(invoiceAdapter);
+
     }
 }
