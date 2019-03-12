@@ -1,27 +1,9 @@
 package com.example.ornamentalflowers;
 
-import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.os.Build;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.annotations.NotNull;
@@ -65,7 +47,7 @@ public class HomePage extends AppCompatActivity {
                         //goToListInvoice();
 
                         case R.id.ftb_ShowSumInvoices:
-                            getSupportFragmentManager().beginTransaction().replace(R.id.container, new showSumInvoice()).commit();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.container, new location()).commit();
                             break;
 
                         //goToListInvoice();

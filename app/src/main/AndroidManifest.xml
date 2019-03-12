@@ -6,6 +6,7 @@
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAEaqkMaIONCHBxnFjXRH0wdOJttVxWE80"/>
 
     <application
         android:allowBackup="true"
