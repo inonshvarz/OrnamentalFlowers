@@ -68,9 +68,11 @@
 
     <Button
         android:id="@+id/SaveInvoice"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:background="@color/colorPrimary"
-        android:text="@string/save" />
+        android:text="@string/save"
+        />
 
 </LinearLayout>

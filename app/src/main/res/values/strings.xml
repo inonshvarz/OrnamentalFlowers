@@ -39,4 +39,29 @@
     <string name="invoice_number">invoicenumber</string>
     <string name="sum_invoice">sum_invoice</string>
     <string name="ShowDateInvoice">Date Invoice</string>
+
+    <string name="weather_notif">Weather Notifications</string>
+    <string name="curr_pos">Your Current Position</string>
+    <string name="pick_time">Select preferred notification time</string>
+    <string name="latitude">Latitude-</string>
+    <string name="longitude">Longitude-</string>
+    <string name="address">Your Address:</string>
+    <string name="Notifications">Notifications</string>
+    <string name="Weatherupdates">Weather updates</string>
+    <string name="Summary">Summary :</string>
+    <string name="notif_info">*The weather alerts will be activated in the background and will get your current location, pressing the button will confirm the use</string>
+    <string name="confirm">Confirm</string>
+    <string name="Cancel">Cancel Notifications</string>
+
+    <string name="windSpeed">Wind Speed :</string>
+    <string name="Temp">Temperature:</string>
+
+
+    <string name="ErrorTitle">Warning!</string>
+    <string name="ErrorMSG">You must give location permission if you want to know the weather</string>
+    <string name="Settings">Settings</string>
+
+    <string name="locationService_Title">Weather updates service</string>
+    <string name="locationService_MSG">Waiting for your location</string>
+    <string name="secces_save">Successfully saved invoice</string>
 </resources>

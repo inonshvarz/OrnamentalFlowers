@@ -30,11 +30,12 @@
     <string name="enter_sum_invoice">הזן סכום חשבונית</string>
     <string name="DateInvoice">הזן תאריך חשבונית</string>
     <string name="Hello">שלום</string>
-    <string name="image">צלם חשבונית</string>
+    <string name="image">טען חשבונית</string>
     <string name="save">שמור פרטים</string>
     <string name="phone_number">טלפון נייד</string>
     <string name="invoice_number">מזהה חשבונית:</string>
     <string name="sum_invoice">סכום חשבונית:</string>
     <string name="ShowDateInvoice">תאריך חשבונית:</string>
+    <string name="secces_save">הנתונים נשמרו בהצלחה</string>
 
 </resources>

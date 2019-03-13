@@ -2,6 +2,8 @@ package com.example.ornamentalflowers;
 
 import android.app.Activity;
 import android.content.Context;
+import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +11,18 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import java.util.ArrayList;
+import com.squareup.picasso.Picasso;
 
 class invoiceAdapterClass extends ArrayAdapter<InvoiceClass> {
+
+    private StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+    String imageURL;
 
     //to reference the Activity
     private final Activity context;
@@ -35,27 +46,23 @@ class invoiceAdapterClass extends ArrayAdapter<InvoiceClass> {
         TextView inputNumInvoice  = (TextView) invoiceView.findViewById(R.id.inputNumInvoice);
         TextView inputSumInvoice  = (TextView) invoiceView.findViewById(R.id.inputSumInvoice);
         TextView inputDateInvoice = (TextView) invoiceView.findViewById(R.id.inputDateInvoice);
-        ImageView invoiceImage    = (ImageView) invoiceView.findViewById(R.id.invoiceImage);
+        final ImageView invoiceImage    = (ImageView) invoiceView.findViewById(R.id.invoiceImage);
 
         inputNumInvoice.setText(invoiceClass.invoiceId);
         inputSumInvoice.setText(invoiceClass.invoiceSum);
         inputDateInvoice.setText(invoiceClass.invoiceDate);
-        invoiceImage.setImageResource(R.drawable.flower2);
+        //invoiceImage.setImageURI(Uri.parse("images/" + invoiceClass.invoiceUid + ".jpg"));
+        imageURL = "images/" + invoiceClass.invoiceId + ".jpg";
+        storageRef.child(imageURL).getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task) {
+                if (task.isSuccessful()) {
+                    Picasso.get().load(task.getResult()).into(invoiceImage);
+                }
+            }
+        });
 
         return invoiceView;
 
-/*        InvoiceClass invoiceClass = getItem(position);
-        if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.fragment_list_invoice, parent, false);
-        }
-
-        TextView inputNumInvoice = (TextView) convertView.findViewById(R.id.inputNumInvoice);
-        TextView inputSumInvoice = (TextView) convertView.findViewById(R.id.inputSumInvoice);
-        TextView inputDateInvoice = (TextView) convertView.findViewById(R.id.inputDateInvoice);
-
-        inputNumInvoice.setText(invoiceClass.invoiceId);
-        inputSumInvoice.setText(invoiceClass.invoiceSum);
-        inputDateInvoice.setText(invoiceClass.invoiceDate);
-        return convertView;*/
     }
 }

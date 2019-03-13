@@ -1,5 +1,7 @@
 package com.example.ornamentalflowers;
 
+import android.net.Uri;
+
 public class InvoiceClass {
 
     String invoiceId;
@@ -7,6 +9,7 @@ public class InvoiceClass {
     String invoiceDate;
     String invoiceSuper;
     String invoiceUid;
+    //Uri    imageInvoice;
 
     public String getInvoiceId() {
         return invoiceId;
@@ -47,4 +50,8 @@ public class InvoiceClass {
     public void setInvoiceUid(String invoiceUid) {
         this.invoiceUid = invoiceUid;
     }
+
+/*    public Uri getImageInvoice() { return imageInvoice;  }
+
+    public void setImageInvoice(Uri imageInvoice) {  this.imageInvoice = imageInvoice; }*/
 }

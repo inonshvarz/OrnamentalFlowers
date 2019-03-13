@@ -47,7 +47,7 @@ public class HomePage extends AppCompatActivity {
                         //goToListInvoice();
 
                         case R.id.ftb_ShowSumInvoices:
-                            getSupportFragmentManager().beginTransaction().replace(R.id.container, new location()).commit();
+                            //getSupportFragmentManager().beginTransaction().replace(R.id.container, new TodayWeatherFragment()).commit();
                             break;
 
                         //goToListInvoice();
